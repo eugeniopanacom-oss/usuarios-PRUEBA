@@ -2938,6 +2938,26 @@ strong:last-of-type {
     font-weight: 800 !important;
 }
 
+/* ========================================================
+   SOLUCIÓN AL HUESO: VISIBILIDAD DE DESCRIPCIÓN DE SERVICIOS
+   ======================================================== */
+
+/* 1. Forzamos a que la clase que encontramos en F12 sea oscura y totalmente visible */
+.service-description,
+.service-description.long,
+div[class*="service-description"] {
+    color: #4A5568 !important; /* Gris grafito oscuro, súper legible sobre el fondo claro */
+    opacity: 1 !important;     /* Rompe cualquier transparencia */
+    display: block !important; /* Asegura que el contenedor se muestre */
+}
+
+/* 2. Por si acaso adentro de ese div hay más etiquetas heredando colores claros */
+.service-description *,
+div[id*="desc-"] * {
+    color: #4A5568 !important;
+    opacity: 1 !important;
+}
+
     </style>
 <body>
     <!-- Header con logo -->
@@ -3057,8 +3077,8 @@ strong:last-of-type {
        <i class="fab fa-instagram"></i> @alexis.sebastiann
     </a>
                         <div class="barbero-description">
-                            <p><strong>"Hola, soy Alexis.</strong> Mi trabajo es</p>
-                            <p>entender lo que buscas y transformarlo en un corte impecable. Te espero para crear juntos, tu estilo perfecto."
+                            <p>"Hola, soy Alexis. Mi trabajo es
+                            entender lo que buscas y transformarlo en un corte impecable. Te espero para crear juntos, tu estilo perfecto."
                             </p>
                         </div>
                     </div>
@@ -3154,10 +3174,10 @@ strong:last-of-type {
 
                     <div class="reservation-summary">
                         <h3>Resumen de tu Reserva</h3>
-                        <p><strong>Fecha:</strong> <span id="summaryDate">No seleccionada</span></p>
-                        <p><strong>Hora:</strong> <span id="summaryTime">No seleccionada</span></p>
-                        <p><strong>Servicio:</strong> <span id="summaryService">No seleccionado</span></p>
-                        <p><strong>Total:</strong> <span id="summaryPrice">$0</span></p>
+                        <p>Fecha: <span id="summaryDate">No seleccionada</span></p>
+                        <p>Hora: <span id="summaryTime">No seleccionada</span></p>
+                        <p>Servicio: <span id="summaryService">No seleccionado</span></p>
+                        <p>Total: <span id="summaryPrice">$0</span></p>
                     </div>
 
                     <div class="form-group">
@@ -3281,6 +3301,7 @@ strong:last-of-type {
         
         <p class="oferta-nota">Oferta válida solo para nuevas reservas</p>
     </div>
+
 </body>
     <script>     
 
