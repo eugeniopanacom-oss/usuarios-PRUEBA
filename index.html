@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S. Studio - Barbería Profesional</title>
+    <title><A.S. Studio - Barbería Profesional</title>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
@@ -2988,6 +2988,24 @@ div[id*="desc-"] * {
     letter-spacing: 1px !important;
 }
 
+/* ========================================================
+   EFECTO VIDRIO TRANSPARENTE PREMIUM (GLASSMORPHISM)
+   ======================================================== */
+
+/* 1. Transparencia esmerilada para las solapas fijas (Superior e Inferior) */
+header, .solapa-superior, .navbar, footer, .solapa-inferior {
+    background-color: rgba(211, 219, 212, 0.75) !important; /* El verde salvia patrio pero al 75% de opacidad */
+    backdrop-filter: blur(12px) !important; /* Genera el efecto de vidrio pulido traslúcido */
+    -webkit-backdrop-filter: blur(12px) !important; /* Compatibilidad con Safari/iPhone */
+}
+
+/* 2. Transparencia limpia para las tarjetas que eran blancas sólidas */
+.card, .tarjeta, .info-card, .hours-container {
+    background-color: rgba(255, 255, 255, 0.65) !important; /* Blanco al 65% para que sea traslúcido */
+    backdrop-filter: blur(8px) !important; /* Vidrio un toque más suave para las tarjetas */
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(234, 227, 213, 0.6) !important; /* Borde de vidrio sutil */
+}
 
     </style>
 <body>
