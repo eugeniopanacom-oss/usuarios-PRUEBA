@@ -3007,6 +3007,229 @@ header, .solapa-superior, .navbar, footer, .solapa-inferior {
     border: 1px solid rgba(234, 227, 213, 0.6) !important; /* Borde de vidrio sutil */
 }
 
+/* ========================================================
+   MODAL DE ALERTA MUNDIALISTA PREMIUM (A.S. STUDIO)
+   ======================================================== */
+.alerta-premium-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Velo ultra suave */
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); /* Vidrio esmerilado */
+    display: flex; align-items: center; justify-content: center;
+    z-index: 999999; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.alerta-premium-overlay.active {
+    opacity: 1; pointer-events: auto;
+}
+
+.alerta-premium-box {
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Blanco lino traslúcido */
+    border: 1px solid rgba(234, 227, 213, 0.8);
+    border-radius: 12px; padding: 30px; max-width: 450px; width: 90%;
+    text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(20px); transition: transform 0.3s ease;
+}
+
+.alerta-premium-overlay.active .alerta-premium-box {
+    transform: translateY(0);
+}
+
+.alerta-premium-box h3 {
+    font-family: 'Cinzel', serif !important; /* Tu fuente de lujo */
+    color: #D4AF37 !important; /* Oro / Sol de Mayo */
+    font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;
+}
+
+.alerta-premium-box p {
+    color: #4A5568 !important; /* Gris de alta legibilidad */
+    font-size: 1rem; line-height: 1.6; margin-bottom: 25px; font-weight: 500;
+}
+
+.alerta-premium-btn {
+    background-color: #4A5D50 !important; /* Tu verde salvia/oliva de los botones */
+    color: #FFFFFF !important; border: none; padding: 12px 30px;
+    border-radius: 6px; font-weight: bold; cursor: pointer;
+    font-family: 'Segoe UI', sans-serif; transition: background-color 0.2s;
+}
+
+.alerta-premium-btn:hover {
+    background-color: #3B4B40 !important;
+}
+
+/* ========================================================
+   DISEÑO EXCLUSIVO DE OFERTAS: VERSIÓN BLINDADA DE ENTRADA
+   ======================================================== */
+.oferta-premium-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 99999;
+    
+    /* BLINDAJE CRÍTICO: Forzamos a que nazca invisible e intangible */
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease;
+}
+
+/* Cuando el JavaScript verifique las condiciones, se vuelve visible */
+.oferta-premium-overlay.active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+.oferta-premium-card {
+    background: rgba(244, 241, 234, 0.95); /* Fondo Arena Suave Premium */
+    border: 2px solid #D4AF37; /* Borde de Oro */
+    border-radius: 16px;
+    padding: 35px 25px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+}
+
+.oferta-badge-top {
+    color: #C69214; /* Bronce/Oro oscuro */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.oferta-titulo-lux {
+    font-family: 'Cinzel', 'Playfair Display', serif; /* Tu fuente elegante */
+    color: #1A2E22; /* Verde bosque ultra oscuro */
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.oferta-titulo-lux .sub-oro {
+    color: #D4AF37; /* Oro Puro */
+}
+
+.oferta-cuerpo-box {
+    background: #FFFFFF; /* Caja blanca limpia para los precios */
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.oferta-descripcion {
+    color: #4A5568;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.oferta-precios-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.precio-item-lux {
+    display: flex;
+    flex-direction: column;
+}
+
+.precio-etiqueta {
+    font-size: 0.7rem;
+    color: #718096;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.precio-valor-vivo {
+    color: #2F855A; /* Verde éxito elegante */
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.precio-valor-tachado {
+    color: #A0AEC0;
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    font-weight: 600;
+}
+
+.oferta-ahorro-tag {
+    background-color: rgba(47, 133, 90, 0.1); /* Fondo verde traslúcido */
+    color: #2F855A;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-block;
+    border: 1px solid rgba(47, 133, 90, 0.2);
+}
+
+.oferta-botones-action {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-lux-aceptar {
+    flex: 1;
+    background-color: #4A5D50; /* Tu Verde Salvia Oficial */
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(74, 93, 80, 0.2);
+}
+
+.btn-lux-aceptar:hover {
+    background-color: #3B4B40;
+}
+
+.btn-lux-aceptar:active {
+    transform: scale(0.98);
+}
+
+.btn-lux-cerrar {
+    flex: 1;
+    background-color: #E2E8F0; /* Gris sutil, chau rojo violento */
+    color: #4A5568;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-lux-cerrar:hover {
+    background-color: #CBD5E0;
+}
+
+.oferta-footer-text {
+    font-size: 0.75rem;
+    color: #718096;
+    font-style: italic;
+}
+
     </style>
 <body>
     <!-- Header con logo -->
@@ -3313,43 +3536,47 @@ header, .solapa-superior, .navbar, footer, .solapa-inferior {
     <!-- Notificación -->
     <div class="notification" id="notification"></div>
 
-    <!-- MODAL DE OFERTA ESPECIAL -->
-<div class="oferta-modal-overlay" id="ofertaModal">
-    <div class="oferta-modal">
-        <h2 class="oferta-titulo">OFERTA ESPECIAL</h2>
-        <p class="oferta-subtitulo">¡Oferta limitada!</p>
+   
+
+    <!-- ========================================================
+     MODAL DE OFERTA EXCLUSIVA (ESTILO PREMIUM MUNDIALISTA)
+     ======================================================== -->
+<div id="modal-oferta-premium" class="oferta-premium-overlay">
+    <div class="oferta-premium-card">
         
-        <div class="oferta-contenido">
-            <p class="oferta-descripcion">Corte de cabello + Afeitado clásico</p>
+        <span class="oferta-badge-top">¡Oferta por tiempo limitado!</span>
+        
+        <h2 class="oferta-titulo-lux">Corte + Afeitado<br><span class="sub-oro">Especial</span></h2>
+        
+        <div class="oferta-cuerpo-box">
+            <p class="oferta-descripcion">¡Oferta limitada! Corte de cabello + afeitado clásico</p>
             
-            <div class="precios-container">
-                <div class="precio-oferta">
-                    <div class="precio-oferta-titulo">PRECIO OFERTA</div>
-                    <div class="precio-oferta-valor">$3.900</div>
+            <div class="oferta-precios-grid">
+                <div class="precio-item-lux">
+                    <span class="precio-etiqueta">PRECIO OFERTA</span>
+                    <span class="precio-valor-vivo">$3.900</span>
                 </div>
-                
-                <div class="precio-normal">
-                    <div class="precio-normal-titulo">PRECIO NORMAL</div>
-                    <div class="precio-normal-valor">$4.700</div>
+                <div class="precio-item-lux normal">
+                    <span class="precio-etiqueta">PRECIO NORMAL</span>
+                    <span class="precio-valor-tachado">$4.700</span>
                 </div>
             </div>
             
-            <div class="ahorro-container">
-                <div class="ahorro-texto">¡AHORRA $800 (17%)!</div>
+            <div class="oferta-ahorro-tag">
+                ¡AHORRA $800 (17%)!
             </div>
         </div>
         
-        <div class="oferta-actions">
-            <button class="oferta-btn aceptar-oferta" id="aceptarOfertaBtn">
-                <i class="fas fa-check-circle"></i> ACEPTAR OFERTA
-            </button>
-            <button class="oferta-btn cerrar-oferta" id="cerrarOfertaBtn">
-                <i class="fas fa-times"></i> CERRAR
-            </button>
+        <div class="oferta-botones-action">
+            <button class="btn-lux-aceptar">ACEPTAR OFERTA</button>
+      <button class="btn-lux-cerrar" onclick="document.getElementById('modal-oferta-premium').classList.remove('active')">CERRAR</button>
+
         </div>
         
-        <p class="oferta-nota">Oferta válida solo para nuevas reservas</p>
+        <p class="oferta-footer-text">Oferta válida solo para nuevas reservas</p>
     </div>
+</div>
+
 
 </body>
     <script>     
@@ -4847,7 +5074,9 @@ console.log("enviarReporteFirebase existe?", typeof enviarReporteFirebase === 'f
                 });
             }
         
-// Función específica para verificar ofertas (solo cuando se necesite)
+// ========================================================
+// REEMPLAZO RADICAL: VERIFICACIÓN HORARIA 24HS INTEGRADA
+// ========================================================
 function verificarYMostrarOferta() {
     console.log("🔍 VERIFICACIÓN DE OFERTA - Estado actual:");
     console.log("  - Fecha seleccionada:", window.selectedDate);
@@ -4857,133 +5086,90 @@ function verificarYMostrarOferta() {
     console.log("  - Oferta ya seleccionada:", ofertaSeleccionada);
     console.log("  - Ofertas disponibles:", window.ofertasDisponibles ? window.ofertasDisponibles.length : 0);
     
-    // 🔴 CONDICIÓN CRÍTICA: Solo mostrar si hay fecha Y hora seleccionadas
+    // CONDICIÓN CRÍTICA: Solo mostrar si hay fecha Y hora seleccionadas
     if (!window.selectedDate || !window.selectedTime) {
         console.log("⏭️ Faltan fecha u hora para mostrar oferta");
         return false;
     }
     
-    // 🔴 NUEVO: Crear clave única para esta fecha y hora
+    // Crear clave única para esta fecha y hora
     const claveOferta = `${window.selectedDate}_${window.selectedTime}`;
     
-    // 🔴 Verificar si ya se mostró oferta para esta fecha y hora
-    if (ofertaMostradaParaFechaHora[claveOferta]) {
-        console.log("⏭️ Oferta ya fue mostrada para esta fecha y hora");
+    // Verificar si ya se mostró o se rechazó la oferta para esta fecha y hora
+    if (ofertaMostradaParaFechaHora[claveOferta] || ofertaRechazadaParaFechaHora[claveOferta]) {
+        console.log("⏭️ Oferta ya procesada (mostrada o rechazada) para este bloque horario");
         return false;
     }
     
-    // 🔴 Verificar si el usuario ya rechazó oferta para esta fecha y hora
-    if (ofertaRechazadaParaFechaHora[claveOferta]) {
-        console.log("⏭️ Oferta ya fue rechazada para esta fecha y hora");
+    if (!ofertaActiva || ofertaSeleccionada) {
+        console.log("⏭️ No hay ofertas activas o ya fue seleccionada");
         return false;
     }
     
-    if (!ofertaActiva) {
-        console.log("⏭️ No hay ofertas activas");
-        return false;
-    }
-    
-    if (ofertaSeleccionada) {
-        console.log("⏭️ Oferta ya fue seleccionada");
-        return false;
-    }
-    
-    // Verificar si hay ofertas disponibles
     if (!window.ofertasDisponibles || window.ofertasDisponibles.length === 0) {
         console.log("⏭️ No hay ofertas disponibles");
         return false;
     }
     
-    console.log("🔍 Buscando oferta aplicable...");
+    console.log("🔍 Buscando oferta aplicable en el reloj...");
     
-    // Verificar TODAS las ofertas disponibles
+    // Limpiamos la hora seleccionada por el cliente en el UX (ej: extrae "11:00" de "11:00 Disponible")
+    const matchClean = window.selectedTime.match(/\d{2}:\d{2}/);
+    const horaTurnoLimpia = matchClean ? matchClean[0] : window.selectedTime;
+    const fechaTurnoStr = window.selectedDate; // Formato YYYY-MM-DD nativo
+
+    // Recorremos TODAS las ofertas disponibles bajadas de Firebase
     for (const oferta of window.ofertasDisponibles) {
-        console.log(`🔍 Analizando oferta: ${oferta.nombre}`);
-        console.log(`   Tipo: ${oferta.tipo_duracion || 'fecha/hora'}`);
+        console.log(`🔍 Analizando límites de la oferta: ${oferta.nombre}`);
         
-        let esAplicable = true;
+        let esAplicable = false;
         
-        // Para ofertas por horas, verificar si todavía están vigentes
-        if (oferta.tipo_duracion === "horas" && oferta.duracion_horas) {
-            console.log("   Es oferta por horas");
+        // CAPTURA DUAL DE VARIABLES DE RANGO ESTRICTO (Formato 24hs de tu administrador)
+        const hInicio = oferta.hora_inicio || oferta.inicio_hora || "00:00";
+        const hFin = oferta.hora_fin || oferta.fin_hora || "23:59";
+        const fInicio = oferta.fecha_inicio || oferta.inicio_fecha || fechaTurnoStr;
+        const fFin = oferta.fecha_fin || oferta.fin_fecha || fechaTurnoStr;
+
+        // Construcción de líneas de tiempo absolutas (Días completos + horas)
+        const momentoDelTurno = new Date(fechaTurnoStr + 'T' + horaTurnoLimpia).getTime();
+        const momentoInicioOferta = new Date(fInicio + 'T' + hInicio).getTime();
+        const momentoFinOferta = new Date(fFin + 'T' + hFin).getTime();
+
+        console.log(`   -> Límite Horario: ¿"${horaTurnoLimpia}" está entre "${hInicio}" y "${hFin}"?`);
+        console.log(`   -> Límite Calendario: ¿"${fechaTurnoStr}" está entre "${fInicio}" y "${fFin}"?`);
+
+        // EL CANDADO MATEMÁTICO UNIVERSAL
+        // Si el turno está dentro del rango de días Y además cumple el reloj de 24hs...
+        if (horaTurnoLimpia >= hInicio && horaTurnoLimpia <= hFin && 
+            momentoDelTurno >= momentoInicioOferta && momentoDelTurno <= momentoFinOferta) {
             
-            if (oferta.creado_en) {
-                const creadoEn = parseFirebaseDate(oferta.creado_en);
-                
-                if (creadoEn) {
-                    const duracionMs = oferta.duracion_horas * 60 * 60 * 1000;
-                    const finOferta = new Date(creadoEn.getTime() + duracionMs);
-                    const ahora = new Date();
-                    
-                    console.log(`   Creado: ${creadoEn}`);
-                    console.log(`   Duración: ${oferta.duracion_horas} horas`);
-                    console.log(`   Vence: ${finOferta}`);
-                    console.log(`   Ahora: ${ahora}`);
-                    console.log(`   ¿Todavía válida?: ${ahora <= finOferta}`);
-                    
-                    esAplicable = (ahora <= finOferta);
-                } else {
-                    console.log("   ⚠️ No se pudo parsear fecha de creación");
-                    esAplicable = false;
-                }
-            } else {
-                console.log("   ⚠️ No tiene fecha de creación");
-                esAplicable = false;
-            }
-        }
-        // Para ofertas por fecha/hora, verificar si la fecha seleccionada está dentro del rango
-        else if (oferta.inicio || oferta.fin) {
-            console.log("   Es oferta con fechas límite");
-            
-            const inicio = parseFirebaseDate(oferta.inicio);
-            const fin = parseFirebaseDate(oferta.fin);
-            const ahora = new Date();
-            
-            console.log(`   Inicio: ${inicio}`);
-            console.log(`   Fin: ${fin}`);
-            console.log(`   Ahora: ${ahora}`);
-            
-            if (inicio && fin) {
-                esAplicable = (ahora >= inicio && ahora <= fin);
-                console.log(`   ¿Válida (entre fechas)?: ${esAplicable}`);
-            } else if (inicio && !fin) {
-                esAplicable = (ahora >= inicio);
-                console.log(`   ¿Válida (desde inicio)?: ${esAplicable}`);
-            } else if (!inicio && fin) {
-                esAplicable = (ahora <= fin);
-                console.log(`   ¿Válida (hasta fin)?: ${esAplicable}`);
-            } else {
-                // Sin fechas límite
-                esAplicable = true;
-                console.log("   Sin fechas límite, válida");
-            }
-        }
-        // Para ofertas sin fecha límite, siempre aplicar
-        else {
-            console.log("   Oferta sin fecha límite, válida");
             esAplicable = true;
+            console.log("   ✅ ¡Coincidencia horaria total aprobada!");
+        } else {
+            esAplicable = false;
+            console.log("   ❌ Turno fuera de rango horaria o de calendario.");
         }
         
+        // FLUJO DE CONTROL DE LA INTERFAZ
         if (esAplicable) {
             console.log(`✅ Oferta APLICABLE: ${oferta.nombre}, mostrando modal...`);
             
-            // 🔴 Registrar que ya mostramos oferta para esta fecha y hora
             ofertaMostradaParaFechaHora[claveOferta] = true;
             
-            // 🔴 PEQUEÑO DELAY para mejor UX
             setTimeout(() => {
                 mostrarModalOfertaEspecifica(oferta);
             }, 300);
             
-            return true;
+            return true; // Rompe el ciclo y activa la promo
         } else {
-            console.log(`❌ Oferta NO aplicable: ${oferta.nombre}`);
+            console.log(`❌ Oferta NO aplicable para este horario: ${oferta.nombre}`);
         }
     }
     
-    console.log("⏭️ Ninguna oferta aplica para esta fecha/hora");
+    console.log("⏭️ Ninguna oferta aplica para este horario específico.");
     return false;
 }
+
 
 // REEMPLAZA la función renderCalendar actual con esta versión CORREGIDA
 function renderCalendar(month, year) {
@@ -5080,120 +5266,102 @@ function renderCalendar(month, year) {
     }
 }
 
+// ========================================================
+// REEMPLAZO: MODAL ACTIVO + INYECCIÓN DE RESPALDO EN EL MENÚ
+// ========================================================
 function mostrarModalOfertaEspecifica(oferta) {
-    console.log("🔧 [MOSTRAR MODAL OFERTA] Oferta recibida:", oferta);
-    console.log("Datos completos:", JSON.stringify(oferta, null, 2));
+    console.log("🔧 [FLUJO DUAL] Abriendo modal premium e inyectando opción de respaldo...", oferta);
     
-    const ofertaModal = document.getElementById('ofertaModal');
-    if (!ofertaModal) {
-        console.error("❌ Modal no encontrado!");
-        return;
+    // 1. OBTENER EL SELECTOR DE SERVICIOS
+    const selectorServicios = document.getElementById('serviceSelect');
+    
+    if (selectorServicios) {
+        // Revisamos que la opción no esté ya metida en el menú para no duplicarla
+        const opcionExiste = Array.from(selectorServicios.options).some(opt => opt.value === oferta.id);
+        
+        if (!opcionExiste) {
+            const nombrePromo = oferta.nombre || "OFERTA ESPECIAL";
+            const precioPromo = parseInt(oferta.precio_oferta) || 0;
+            
+            // Creamos la línea de servicio extra de forma nativa para el desplegable
+            const nuevaOpcion = document.createElement('option');
+            nuevaOpcion.value = oferta.id; // Guarda el ID de Firebase para procesar el turno con descuento
+            nuevaOpcion.textContent = `🔥 PROMO: ${nombrePromo} - $${precioPromo.toLocaleString('es-AR')}`;
+            nuevaOpcion.style.fontWeight = "bold";
+            nuevaOpcion.style.color = "#2F855A"; // Texto verde destacado
+            
+            // La sumamos al menú desplegable para que quede fija si se arrepiente
+            selectorServicios.appendChild(nuevaOpcion);
+            console.log(`✅ Respaldo: Oferta "${nombrePromo}" agregada al menú desplegable.`);
+        }
     }
 
-        // 🔴 OCULTAR TODO EL CONTENEDOR DEL CALENDARIO
-    const calendarContainer = document.querySelector('.calendar-container');
-    const hoursContainer = document.querySelector('.hours-container');
-    if (calendarContainer) calendarContainer.style.opacity = '0.3';
-    if (hoursContainer) hoursContainer.style.opacity = '0.3';
-    
-    // 🔴 CRÍTICO: Asegurar que tenemos datos válidos
-    const nombre = oferta.nombre || "OFERTA ESPECIAL";
-    const descripcion = oferta.descripcion || "Servicio especial";
-    const precioOferta = parseInt(oferta.precio_oferta) || 0;
-    const precioNormal = parseInt(oferta.precio_normal) || 0;
-    
-    console.log(`Datos procesados:`);
-    console.log(`  Nombre: ${nombre}`);
-    console.log(`  Descripción: ${descripcion}`);
-    console.log(`  Precio oferta: ${precioOferta}`);
-    console.log(`  Precio normal: ${precioNormal}`);
-    
-    // Actualizar contenido con datos específicos de la oferta
-    const tituloElem = ofertaModal.querySelector('.oferta-titulo');
-    const subtituloElem = ofertaModal.querySelector('.oferta-subtitulo');
-    const descripcionElem = ofertaModal.querySelector('.oferta-descripcion');
-    const precioOfertaElem = ofertaModal.querySelector('.precio-oferta-valor');
-    const precioNormalElem = ofertaModal.querySelector('.precio-normal-valor');
-    const ahorroElem = ofertaModal.querySelector('.ahorro-texto');
-    
-    if (tituloElem) {
-        tituloElem.textContent = nombre;
-        console.log(`✅ Título actualizado: ${nombre}`);
-    }
-    
-    // Mostrar tipo de oferta en subtítulo
-    if (subtituloElem) {
-        if (oferta.tipo_duracion === "horas") {
-            subtituloElem.textContent = `¡Oferta por ${oferta.duracion_horas} horas!`;
-        } else if (oferta.inicio || oferta.fin) {
-            subtituloElem.textContent = "¡Oferta por tiempo limitado!";
-        } else {
-            subtituloElem.textContent = "¡Oferta especial!";
-        }
-        console.log(`✅ Subtítulo actualizado: ${subtituloElem.textContent}`);
-    }
-    
-    if (descripcionElem) {
-        descripcionElem.textContent = descripcion;
-        console.log(`✅ Descripción actualizada: ${descripcion}`);
-    }
-    
-    if (precioOfertaElem) {
-        precioOfertaElem.textContent = `$${precioOferta.toLocaleString('es-AR')}`;
-        console.log(`✅ Precio oferta actualizado: $${precioOferta.toLocaleString('es-AR')}`);
-    }
-    
-    if (precioNormalElem) {
-        precioNormalElem.textContent = `$${precioNormal.toLocaleString('es-AR')}`;
-        console.log(`✅ Precio normal actualizado: $${precioNormal.toLocaleString('es-AR')}`);
-    }
-    
-    if (ahorroElem) {
-        if (precioNormal > 0 && precioOferta > 0 && precioNormal > precioOferta) {
-            const ahorro = precioNormal - precioOferta;
-            const porcentaje = Math.round((ahorro / precioNormal) * 100);
-            ahorroElem.textContent = `¡AHORRA $${ahorro.toLocaleString('es-AR')} (${porcentaje}%)!`;
-            console.log(`✅ Ahorro calculado: $${ahorro} (${porcentaje}%)`);
-        } else {
-            ahorroElem.textContent = "¡OFERTA ESPECIAL!";
-            console.log("⚠️ No se pudo calcular ahorro, mostrando texto genérico");
-        }
-    }
-    
-    // Mostrar el modal
-    ofertaModal.classList.add('active');
-    ofertaModal.style.display = 'flex';
-    console.log("✅ Modal mostrado");
-    
-    // 🔴 CRÍTICO: Configurar botones CORRECTAMENTE
-    const aceptarBtn = document.getElementById('aceptarOfertaBtn');
-    const cerrarBtn = document.getElementById('cerrarOfertaBtn');
-    
-    // Remover eventos anteriores para evitar múltiples listeners
-    if (aceptarBtn) {
-        const nuevoAceptarBtn = aceptarBtn.cloneNode(true);
-        aceptarBtn.parentNode.replaceChild(nuevoAceptarBtn, aceptarBtn);
+    // 2. CONFIGURAR Y MOSTRAR EL MODAL PREMIUM MUNDIALISTA
+    const ofertaModal = document.getElementById('modal-oferta-premium');
+    if (ofertaModal) {
+        // Opacidad suave para el fondo del calendario (Tu UX original)
+        const calendarContainer = document.querySelector('.calendar-container');
+        const hoursContainer = document.querySelector('.hours-container');
+        if (calendarContainer) calendarContainer.style.opacity = '0.3';
+        if (hoursContainer) hoursContainer.style.opacity = '0.3';
         
-        const nuevoBtn = document.getElementById('aceptarOfertaBtn');
-        nuevoBtn.onclick = function() {
-            console.log("🖱️ Botón ACEPTAR OFERTA clickeado");
-            aceptarOfertaEspecifica(oferta);
-        };
-        console.log("✅ Botón aceptar configurado");
-    }
-    
-    if (cerrarBtn) {
-        const nuevoCerrarBtn = cerrarBtn.cloneNode(true);
-        cerrarBtn.parentNode.replaceChild(nuevoCerrarBtn, cerrarBtn);
+        // Mapeo dinámico de los textos en la tarjeta premium
+        const tituloElem = ofertaModal.querySelector('.oferta-titulo-lux');
+        const precioOfertaElem = ofertaModal.querySelector('.precio-valor-vivo');
+        const precioNormalElem = ofertaModal.querySelector('.precio-valor-tachado');
+        const ahorroElem = ofertaModal.querySelector('.oferta-ahorro-tag');
         
-        const nuevoBtn = document.getElementById('cerrarOfertaBtn');
-        nuevoBtn.onclick = function() {
-            console.log("🖱️ Botón CERRAR clickeado");
-            cerrarOferta();
-        };
-        console.log("✅ Botón cerrar configurado");
+        if (tituloElem) tituloElem.innerHTML = `${oferta.nombre || 'OFERTA'} <br><span class="sub-oro">Especial</span>`;
+        if (precioOfertaElem) precioOfertaElem.textContent = `$${parseInt(oferta.precio_oferta).toLocaleString('es-AR')}`;
+        if (precioNormalElem) precioNormalElem.textContent = `$${parseInt(oferta.precio_normal).toLocaleString('es-AR')}`;
+        
+if (ahorroElem && oferta.precio_normal && oferta.precio_oferta) {
+    const pNormal = parseFloat(oferta.precio_normal);
+    const pOferta = parseFloat(oferta.precio_oferta);
+    
+    if (pNormal > pOferta) {
+        const dineroAhorrado = pNormal - pOferta;
+        const porcentajeAhorrado = Math.round((dineroAhorrado / pNormal) * 100);
+        
+        // Inyecta el texto exacto adaptado a los precios en tiempo real
+        ahorroElem.textContent = `¡AHORRA $${dineroAhorrado.toLocaleString('es-AR')} (${porcentajeAhorrado}%)!`;
+    } else {
+        ahorroElem.textContent = "¡OFERTA EXCLUSIVA!";
     }
 }
+
+        
+        // Desplegamos el modal visual en pantalla
+        ofertaModal.classList.add('active');
+        
+        // Hooks de los botones del modal
+        const aceptarBtn = ofertaModal.querySelector('.btn-lux-aceptar');
+        const cerrarBtn = ofertaModal.querySelector('.btn-lux-cerrar');
+        
+        if (aceptarBtn) {
+            aceptarBtn.onclick = function() {
+                if (typeof aceptarOfertaEspecifica === 'function') aceptarOfertaEspecifica(oferta);
+                ofertaModal.classList.remove('active');
+                if (calendarContainer) calendarContainer.style.opacity = '1';
+                if (hoursContainer) hoursContainer.style.opacity = '1';
+                
+                // Si la acepta directo en el modal, la dejamos seleccionada en el menú
+                if (selectorServicios) selectorServicios.value = oferta.id;
+            };
+        }
+        
+        if (cerrarBtn) {
+            cerrarBtn.onclick = function() {
+                // Modificado: Al cerrar NO cancelamos la oferta del sistema, solo quitamos el modal de la vista
+                ofertaModal.classList.remove('active');
+                if (calendarContainer) calendarContainer.style.opacity = '1';
+                if (hoursContainer) hoursContainer.style.opacity = '1';
+                console.log("ℹ️ Modal cerrado. La oferta sigue disponible en el desplegable de servicios.");
+            };
+        }
+    }
+}
+
 
 // Agregar esta función al inicio del script
 // REEMPLAZA completamente la función parseFirebaseDate:
@@ -7767,5 +7935,201 @@ document.addEventListener('DOMContentLoaded', function() {
         instagramLink.title = "Se abrirá en la aplicación de Instagram. Búscame como @alexis.sebastiann";
     }
 });
+
+// Agrega esto dentro del objeto que se envía a Firebase cuando se detecta una oferta:
+const datosParaFirebase = {
+    nombre: inputNombre.value,
+    telefono: inputTelefono.value,
+    servicio: servicioSeleccionado,
+    fecha: fechaDelTurnoElegida, // Ej: "2026-06-27"
+    hora: horaDelTurnoElegida,
+    
+    // --- ESTOS SON LOS CAMPOS QUE EXIGE EL NUEVO CANDADO DE FIREBASE ---
+    es_oferta: true, 
+    oferta_limite_fecha: ofertaActiva.fin_fecha // La fecha límite real de la oferta (Ej: "2026-06-15")
+};
+
+// ========================================================
+// CONECTOR DEL FLUJO DEL NUEVO MODAL PREMIUM
+// ========================================================
+
+// 1. Esta función la debes llamar cuando el usuario termina de elegir fecha y hora
+function dispararModalOfertaPremium() {
+    const modal = document.getElementById('modal-oferta-premium');
+    if (modal) {
+        modal.classList.add('active'); // Muestra la oferta en el momento justo
+    }
+}
+
+// 2. Controlamos las acciones de los botones nuevos dentro del modal
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Estructura de la ventana emergente premium mundialista esmerilada
+    if (!document.getElementById('alertaPremium')) {
+        const modalHTML = `
+            <div id="alertaPremium" class="alerta-premium-overlay">
+                <div class="alerta-premium-box">
+                    <h3>⚠️ Horario No Disponible</h3>
+                    <p id="alertaPremiumMensaje">Esta promoción especial solo es válida para el rango horario de la oferta.</p>
+                    <button class="alerta-premium-btn" onclick="cerrarAlertaPremium()">Entendido</button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    window.mostrarAlertaPremium = function(mensaje) {
+        document.getElementById('alertaPremiumMensaje').innerText = mensaje;
+        document.getElementById('alertaPremium').classList.add('active');
+    };
+    window.cerrarAlertaPremium = function() {
+        document.getElementById('alertaPremium').classList.remove('active');
+    };
+
+    // 2. ESCUDO DE INTERCEPCIÓN HORARIA PREMIUM
+    document.addEventListener("click", function(evento) {
+        // Detecta el elemento de hora clickeado por el usuario en la lista
+        const elemento = evento.target.closest('button, .hour-option, .time-slot, [data-time], [class*="hour"]');
+        
+        if (elemento) {
+            // 1. Capturamos la hora limpia usando directamente el 'data-time' detectado en la tarjeta [2]
+            let horaValor = elemento.getAttribute('data-time') || elemento.value || null;
+            
+            // Si no tiene el atributo directo, barremos el texto interno buscando los números de la hora
+            if (!horaValor && elemento.innerText.includes(':')) {
+                const matchHora = elemento.innerText.match(/\d{2}:\d{2}/);
+                if (matchHora) horaValor = matchHora[0];
+            }
+
+            // 2. Capturamos el día del turno seleccionado en el calendario
+            const inputFecha = document.querySelector('input[type="date"], .calendar-date.selected, #fecha, [id*="fecha"]');
+            let fechaValor = inputFecha ? (inputFecha.value || inputFecha.getAttribute('data-date') || inputFecha.innerText.trim()) : null;
+
+            if (fechaValor && !fechaValor.includes('-') && typeof formatDate === 'function') {
+                fechaValor = formatDate(new Date(fechaValor));
+            }
+            if (!fechaValor) {
+                // Si no hay input directo de fecha, leemos el texto de tu captura (ej: extrae "2026-06-17")
+                const textoCabecera = document.body.innerText;
+                const matchFechaTexto = textoCabecera.match(/(\d{1,2})\s+de\s+([a-z]+)\s+de\s+(\d{4})/i);
+                fechaValor = new Date().toISOString().split('T')[0]; // Respaldo hoy
+            }
+
+            // 3. CAPTURA DE LA OFERTA: Soportamos todas las variables de memoria del cliente
+            let listaOfertasServidor = [];
+            if (typeof ofertasDisponibles !== 'undefined') listaOfertasServidor = ofertasDisponibles;
+            else if (typeof window.ofertasDisponibles !== 'undefined') listaOfertasServidor = window.ofertasDisponibles;
+            else if (typeof ofertasActivas !== 'undefined') listaOfertasServidor = ofertasActivas;
+
+            // Detectamos cuál oferta seleccionó el usuario
+            let idOferta = typeof idOfertaSeleccionada !== 'undefined' ? idOfertaSeleccionada : null;
+            const ofertaVisual = document.querySelector('.oferta-item.selected, .card-oferta.active, [class*="oferta"].active');
+            if (!idOferta && ofertaVisual) idOferta = ofertaVisual.getAttribute('data-oferta-id') || ofertaVisual.id;
+
+            // 4. EJECUTAMOS EL CANDADO MATEMÁTICO SI LA RESERVA TIENE UNA OFERTA EN JUEGO
+            if (idOferta && horaValor && listaOfertasServidor.length > 0) {
+                const ofertaAsociada = listaOfertasServidor.find(o => o.id === idOferta);
+                
+                if (ofertaAsociada) {
+                    // Limpiamos la hora del turno por seguridad
+                    const matchClean = horaValor.match(/\d{2}:\d{2}/);
+                    const horaTurnoLimpia = matchClean ? matchClean[0] : horaValor;
+
+                    // Traemos los límites de la oferta desde Firebase (Soportando formatos con y sin guion bajo)
+                    const horaInicioOferta = ofertaAsociada.hora_inicio || ofertaAsociada.inicio_hora || "00:00";
+                    const horaFinOferta = ofertaAsociada.hora_fin || ofertaAsociada.fin_hora || "23:59";
+                    const fechaInicioOferta = ofertaAsociada.fecha_inicio || ofertaAsociada.inicio_fecha || fechaValor;
+                    const fechaFinOferta = ofertaAsociada.fecha_fin || ofertaAsociada.fin_fecha || fechaValor;
+
+                    // Unimos las líneas de tiempo completas
+                    const momentoDelTurno = new Date(fechaValor + 'T' + horaTurnoLimpia).getTime();
+                    const momentoInicioOferta = new Date(fechaInicioOferta + 'T' + horaInicioOferta).getTime();
+                    const momentoFinOferta = new Date(fechaFinOferta + 'T' + horaFinOferta).getTime();
+
+                    // 5. EL FILTRO STRICTO EN FORMATO 24HS
+                    // Compara si la hora elegida (ej: "11:00") está fuera de las horas permitidas (ej: "06:00" a "10:00")
+                    if (momentoDelTurno < momentoInicioOferta || momentoDelTurno > momentoFinOferta || 
+                        horaTurnoLimpia < horaInicioOferta || horaTurnoLimpia > horaFinOferta) {
+                        
+                        evento.preventDefault();
+                        evento.stopPropagation();
+                        
+                        // Lanzamos la hermosa alerta de vidrio esmerilado con los colores del local
+                        mostrarAlertaPremium(`Esta promoción especial solo es válida para turnos agendados de ${horaInicioOferta} a ${horaFinOferta} hs.\n\nEl horario seleccionado de las ${horaTurnoLimpia} hs queda fuera del rango permitido.`);
+                        
+                        return false;
+                    }
+                }
+            }
+        }
+    }, true); // Prioridad absoluta antes de mandar datos a Firebase
+});
+
+// ========================================================
+// ENLACE ESPEJO: CAPTURA LA ORDEN DE APERTURA DEL SCRIPT VIEJO
+// ========================================================
+(function() {
+    // Si tu script original abría el modal cambiando el estilo de un ID viejo,
+    // interceptamos esa acción para desviar la orden al modal nuevo.
+    
+    // CAMBIA 'modal-ofertas-viejo' por el ID exacto que tenía tu modal de neón
+    const idModalViejo = 'modal-ofertas-viejo'; 
+    
+    // Creamos un elemento falso en el fondo con el ID viejo para que tu script no tire error
+    if (!document.getElementById(idModalViejo)) {
+        const dummy = document.createElement('div');
+        dummy.id = idModalViejo;
+        dummy.style.display = 'none';
+        document.body.appendChild(dummy);
+        
+        // Monitoreamos constantemente si tu código viejo intenta mostrar el modal neón
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'style') {
+                    const displayActual = window.getComputedStyle(dummy).display;
+                    const nuevoModal = document.getElementById('modal-oferta-premium');
+                    
+                    if (displayActual !== 'none' && nuevoModal) {
+                        // ¡Tu script viejo intentó abrir la oferta! Abrimos el premium:
+                        nuevoModal.classList.add('active');
+                        dummy.style.display = 'none'; // Reseteamos el falso
+                    }
+                }
+            });
+        });
+        
+        observer.observe(dummy, { attributes: true });
+    }
+})();
+
+// ========================================================
+// CONTROL UNIFICADO DE APERTURA DE OFERTA PREMIUM
+// ========================================================
+function mostrarOfertaSiCorresponde() {
+    console.log("🎁 [Candado] Verificar condiciones de oferta...");
+    
+    if (!ofertaActiva || ofertaSeleccionada) {
+        console.log("⏭️ No mostrar oferta: inactiva o ya seleccionada");
+        return;
+    }
+    
+    // Solo mostrar si se seleccionó fecha Y hora Y servicio en el nuevo UX
+    if (window.selectedDate && window.selectedTime && window.selectedService) {
+        console.log("✅ Condiciones cumplidas. Abriendo oferta premium...");
+        
+        setTimeout(() => {
+            // Buscamos tu nueva facha premium
+            const nuevoModal = document.getElementById('modal-oferta-premium');
+            if (nuevoModal) {
+                nuevoModal.classList.add('active'); // Le inyectamos el active en el segundo exacto
+            } else {
+                // Respaldo por si el script original usaba la función vieja
+                mostrarModalOferta();
+            }
+        }, 500); // Mantiene el delay para un UX suave
+    } else {
+        console.log("❌ Faltan condiciones en pantalla para mostrar la oferta");
+    }
+}
+
     </script>
 </html>
