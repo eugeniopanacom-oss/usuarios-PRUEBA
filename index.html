@@ -877,403 +877,172 @@
             }
         }
 
-        /* ========== VENTANA DE CONFIRMACIÓN NUEVA ========== */
-        .confirmation-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(5px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 999999;
-            padding: 20px;
-            animation: fadeIn 0.4s ease;
-        }
+        /* ==========================================================================
+   VENTANA DE CONFIRMACIÓN NUEVA - ESTILO REESTILIZADO A.S. STUDIO
+   ========================================================================== */
+.confirmation-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Opacidad sutil para interfaces claras */
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    padding: 20px;
+    animation: fadeIn 0.4s ease;
+    overflow: hidden; /* Elimina cualquier scroll residual de fondo */
+}
 
-        .confirmation-modal-overlay.active {
-            display: flex !important;
-        }
+.confirmation-modal-overlay.active {
+    display: flex !important;
+}
 
-        .confirmation-window {
-            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            border: 3px solid transparent;
-            box-shadow:
-                0 0 50px rgba(212, 175, 55, 0.4),
-                0 0 100px rgba(212, 175, 55, 0.2),
-                inset 0 0 30px rgba(212, 175, 55, 0.1);
-            animation: slideUp 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
+.confirmation-window {
+    background: #ffffff; /* Fondo blanco limpio idéntico a tus tarjetas */
+    border-radius: 6px;  /* Radio de borde sutil y elegante */
+    padding: 35px;
+    max-width: 460px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave idéntica a tus servicios */
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    box-sizing: border-box;
+}
 
-        /* Efecto borde dorado brillante */
-        .confirmation-window::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(45deg,
-                    #d4af37,
-                    #b8941f,
-                    #ffd700,
-                    #d4af37);
-            border-radius: 23px;
-            z-index: -1;
-            opacity: 0.7;
-            animation: borderGlow 3s infinite linear;
-        }
+/* Animaciones originales mantenidas para suavidad */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-        @keyframes borderGlow {
-            0% {
-                background-position: 0% 50%;
-                opacity: 0.7;
-            }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-            50% {
-                background-position: 100% 50%;
-                opacity: 1;
-            }
+/* Título adaptado al oro/ocre de A.S. STUDIO */
+.confirmation-title {
+    color: #cbb26a; 
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
 
-            100% {
-                background-position: 0% 50%;
-                opacity: 0.7;
-            }
-        }
+/* Tarjeta contenedora de datos del turno */
+.confirmation-info {
+    background: #ffffff;
+    border-radius: 0;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
 
-        @keyframes slideUp {
-            from {
-                transform: translateY(30px) scale(0.95);
-                opacity: 0;
-            }
+/* Filas de información alineadas con flexbox */
+.confirmation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e6dfd5; /* Separadores sutiles en tono crema */
+}
 
-            to {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-        }
+.confirmation-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
+/* Etiquetas (Cliente, Fecha, etc.) */
+.confirmation-label {
+    color: #cbb26a;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
 
-            to {
-                opacity: 1;
-            }
-        }
+/* Datos (Nombre, hora, etc.) */
+.confirmation-value {
+    color: #2c2c2c;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: right;
+}
 
-        /* Título con efecto neón */
-        .confirmation-title {
-            color: #d4af37;
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            text-shadow:
-                0 0 15px rgba(212, 175, 55, 0.5),
-                0 0 25px rgba(212, 175, 55, 0.3),
-                0 0 35px rgba(212, 175, 55, 0.1);
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            animation: titleGlow 2s infinite alternate;
-        }
+/* Destacado del Precio Total */
+.confirmation-value.total {
+    color: #2c2c2c !important;
+    font-weight: bold;
+    font-size: 1.15rem;
+}
 
-        @keyframes titleGlow {
-            from {
-                text-shadow:
-                    0 0 15px rgba(212, 175, 55, 0.5),
-                    0 0 25px rgba(212, 175, 55, 0.3);
-            }
+/* Nota aclaratoria inferior */
+.confirmation-note {
+    text-align: center;
+    color: #666666;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e6dfd5;
+    line-height: 1.4;
+}
 
-            to {
-                text-shadow:
-                    0 0 20px rgba(212, 175, 55, 0.7),
-                    0 0 30px rgba(212, 175, 55, 0.4),
-                    0 0 40px rgba(212, 175, 55, 0.2);
-            }
-        }
+/* Contenedor de acciones ordenadas verticalmente */
+.confirmation-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
 
-        /* Lista de información */
-        .confirmation-info {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 5px solid #d4af37;
-            backdrop-filter: blur(10px);
-        }
+/* Botones Base */
+.confirmation-btn {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+}
 
-        .confirmation-item {
-            display: flex;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* Botón Notificar por WhatsApp (Mantiene verde de marca pero integrado) */
+.whatsapp-confirm {
+    background: #25D366;
+    color: white;
+    border: none;
+}
 
-        .confirmation-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+.whatsapp-confirm:hover {
+    background: #1da851;
+}
 
-        .confirmation-label {
-            color: #d4af37;
-            font-weight: 600;
-            min-width: 130px;
-            font-size: 1.1rem;
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
-        }
+/* Botón Cerrar (Clon exacto al botón "Página Principal" de tu cabecera) */
+.close-confirm {
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1.5px solid #1a1a1a;
+}
 
-        .confirmation-value {
-            color: white;
-            font-size: 1.2rem;
-            flex: 1;
-            font-weight: 500;
-        }
+.close-confirm:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+}
 
-        .confirmation-value.total {
-            color: #d4af37 !important;
-            font-weight: bold;
-            font-size: 1.4rem;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Botones */
-        .confirmation-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .confirmation-btn {
-            flex: 1;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            border: none;
-            outline: none;
-        }
-
-        .whatsapp-confirm {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-confirm:hover {
-            background: linear-gradient(135deg, #1da851, #0d796e);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .close-confirm {
-            background: rgba(212, 175, 55, 0.15);
-            color: white;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .close-confirm:hover {
-            background: rgba(212, 175, 55, 0.25);
-            border-color: #d4af37;
-            transform: translateY(-3px);
-        }
-
-        /* Nota */
-        .confirmation-note {
-            text-align: center;
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-style: italic;
-        }
-
-        /* Efectos de neón mejorados para botones */
-        .whatsapp-confirm {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            box-shadow:
-                0 0 15px rgba(37, 211, 102, 0.5),
-                0 0 30px rgba(37, 211, 102, 0.3),
-                inset 0 0 10px rgba(255, 255, 255, 0.2);
-            border: 2px solid #25D366;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .whatsapp-confirm::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg,
-                    #25D366, #128C7E, #25D366);
-            z-index: -1;
-            border-radius: 10px;
-            opacity: 0.8;
-            animation: whatsappGlow 2s infinite alternate;
-        }
-
-        @keyframes whatsappGlow {
-            0% {
-                box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
-                opacity: 0.7;
-            }
-
-            100% {
-                box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
-                opacity: 1;
-            }
-        }
-
-        .close-confirm {
-            background: linear-gradient(135deg, #ff4444, #cc0000);
-            color: white;
-            box-shadow:
-                0 0 15px rgba(255, 68, 68, 0.5),
-                0 0 30px rgba(255, 68, 68, 0.3),
-                inset 0 0 10px rgba(255, 255, 255, 0.2);
-            border: 2px solid #ff4444;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .close-confirm::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg,
-                    #ff4444, #cc0000, #ff4444);
-            z-index: -1;
-            border-radius: 10px;
-            opacity: 0.8;
-            animation: closeGlow 2s infinite alternate;
-        }
-
-        @keyframes closeGlow {
-            0% {
-                box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
-                opacity: 0.7;
-            }
-
-            100% {
-                box-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
-                opacity: 1;
-            }
-        }
-
-        /* Efectos hover mejorados */
-        .whatsapp-confirm:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow:
-                0 0 20px rgba(37, 211, 102, 0.7),
-                0 0 40px rgba(37, 211, 102, 0.5),
-                inset 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-
-        .close-confirm:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow:
-                0 0 20px rgba(255, 68, 68, 0.7),
-                0 0 40px rgba(255, 68, 68, 0.5),
-                inset 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-
-        /* Mejorar bordes dorados del modal */
-        .confirmation-window::before {
-            animation: borderGlow 3s infinite linear;
-            background: linear-gradient(45deg,
-                    #d4af37, #ffd700, #b8941f, #ffd700, #d4af37);
-            background-size: 200% 200%;
-        }
-
-        @keyframes borderGlow {
-            0% {
-                background-position: 0% 50%;
-                opacity: 0.8;
-            }
-
-            50% {
-                background-position: 100% 50%;
-                opacity: 1;
-            }
-
-            100% {
-                background-position: 0% 50%;
-                opacity: 0.8;
-            }
-        }
-
-        /* Animaciones */
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(30px) scale(0.95);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Agrega esto en tu CSS */
-        .form-control.valid {
-            border-color: var(--success) !important;
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
-        }
-
-        .form-control.invalid {
-            border-color: var(--error) !important;
-            box-shadow: 0 0 5px rgba(244, 67, 54, 0.3);
-        }
-
-        /* Indicador de validación */
-        .form-group {
-            position: relative;
-        }
-
-        .form-group .validation-icon {
-            position: absolute;
-            right: 10px;
-            top: 35px;
-            font-size: 1.2rem;
-            display: none;
-        }
-
-        .form-group .validation-icon.valid {
-            color: var(--success);
-            display: block;
-        }
-
-        .form-group .validation-icon.invalid {
-            color: var(--error);
-            display: block;
-        }
 
         /* ========== VENTANA DE OFERTAS ========== */
         .oferta-modal-overlay {
